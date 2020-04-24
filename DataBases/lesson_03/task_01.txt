@@ -1,0 +1,110 @@
+SHOW TABLES;
+DESCRIBE communities;
+DESCRIBE communities_users;
+DESCRIBE friendship;
+DESCRIBE friendship_statuses;
+DESCRIBE media;
+DESCRIBE media_types;
+DESCRIBE messages;
+DESCRIBE profiles;
+DESCRIBE users;
+
+Tables_in_vk       |
+-------------------|
+communities        |
+communities_users  |
+friendship         |
+friendship_statuses|
+media              |
+media_types        |
+messages           |
+profiles           |
+users              |
+
+
+
+Field|Type        |Null|Key|Default|Extra         |
+-----|------------|----|---|-------|--------------|
+id   |int unsigned|NO  |PRI|       |auto_increment|
+name |varchar(150)|NO  |UNI|       |              |
+
+
+
+Field       |Type        |Null|Key|Default|Extra|
+------------|------------|----|---|-------|-----|
+community_id|int unsigned|NO  |PRI|       |     |
+user_id     |int unsigned|NO  |PRI|       |     |
+
+
+
+Field       |Type        |Null|Key|Default          |Extra            |
+------------|------------|----|---|-----------------|-----------------|
+user_id     |int unsigned|NO  |PRI|                 |                 |
+friend_id   |int unsigned|NO  |PRI|                 |                 |
+status_id   |int unsigned|NO  |   |                 |                 |
+requested_at|datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED|
+confirmet_at|datetime    |YES |   |                 |                 |
+
+
+
+Field|Type        |Null|Key|Default|Extra         |
+-----|------------|----|---|-------|--------------|
+id   |int unsigned|NO  |PRI|       |auto_increment|
+name |varchar(150)|NO  |UNI|       |              |
+
+
+
+Field        |Type        |Null|Key|Default          |Extra                                        |
+-------------|------------|----|---|-----------------|---------------------------------------------|
+id           |int unsigned|NO  |PRI|                 |auto_increment                               |
+media_type_id|int unsigned|NO  |   |                 |                                             |
+user_id      |int unsigned|NO  |   |                 |                                             |
+filename     |varchar(255)|NO  |   |                 |                                             |
+file_size    |int         |NO  |   |                 |                                             |
+metadata     |json        |YES |   |                 |                                             |
+created_at   |datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED                            |
+updated_at   |datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED on update CURRENT_TIMESTAMP|
+
+
+
+Field|Type        |Null|Key|Default|Extra         |
+-----|------------|----|---|-------|--------------|
+id   |int unsigned|NO  |PRI|       |auto_increment|
+name |varchar(255)|NO  |UNI|       |              |
+
+
+
+Field       |Type        |Null|Key|Default          |Extra            |
+------------|------------|----|---|-----------------|-----------------|
+id          |int unsigned|NO  |PRI|                 |auto_increment   |
+from_user_id|int unsigned|NO  |   |                 |                 |
+to_user_id  |int unsigned|NO  |   |                 |                 |
+community_id|int unsigned|NO  |   |                 |                 |
+body        |text        |NO  |   |                 |                 |
+is_important|tinyint(1)  |YES |   |                 |                 |
+is_delivered|tinyint(1)  |YES |   |                 |                 |
+created_at  |datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED|
+
+
+
+Field     |Type        |Null|Key|Default          |Extra                                        |
+----------|------------|----|---|-----------------|---------------------------------------------|
+user_id   |int unsigned|NO  |PRI|                 |                                             |
+gender    |char(1)     |NO  |   |                 |                                             |
+birthday  |date        |YES |   |                 |                                             |
+city      |varchar(100)|YES |   |                 |                                             |
+country   |varchar(100)|YES |   |                 |                                             |
+photo_id  |int unsigned|NO  |   |                 |                                             |
+updated_at|datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED on update CURRENT_TIMESTAMP|
+
+
+
+Field     |Type        |Null|Key|Default          |Extra                                        |
+----------|------------|----|---|-----------------|---------------------------------------------|
+id        |int unsigned|NO  |PRI|                 |auto_increment                               |
+first_name|varchar(100)|NO  |   |                 |                                             |
+last_name |varchar(100)|NO  |   |                 |                                             |
+email     |varchar(120)|NO  |UNI|                 |                                             |
+phone     |varchar(120)|NO  |UNI|                 |                                             |
+created_at|datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED                            |
+updated_at|datetime    |YES |   |CURRENT_TIMESTAMP|DEFAULT_GENERATED on update CURRENT_TIMESTAMP|
