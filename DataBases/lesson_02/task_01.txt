@@ -1,0 +1,32 @@
+inlun@unlun-server:~$ ll
+total 84
+drwxr-xr-x 4 inlun inlun  4096 Apr 16 14:17 ./
+drwxr-xr-x 3 root  root   4096 Apr 16 09:47 ../
+-rw------- 1 inlun inlun   512 Apr 16 12:56 .bash_history
+-rw-r--r-- 1 inlun inlun   220 Apr  4  2018 .bash_logout
+-rw-r--r-- 1 inlun inlun  3771 Apr  4  2018 .bashrc
+drwx------ 2 inlun inlun  4096 Apr 16 10:02 .cache/
+drwx------ 3 inlun inlun  4096 Apr 16 10:02 .gnupg/
+-rw------- 1 inlun inlun    38 Apr 16 13:41 .my.cnf
+-rw------- 1 inlun inlun   837 Apr 16 14:17 .mysql_history
+-rw-r--r-- 1 inlun inlun   807 Apr  4  2018 .profile
+-rw-r--r-- 1 inlun inlun     0 Apr 16 10:07 .sudo_as_admin_successful
+-rw------- 1 inlun inlun   789 Apr 16 13:41 .viminfo
+-rw-rw-r-- 1 inlun inlun   168 Apr 16 10:26 .wget-hsts
+-rw-rw-r-- 1 inlun inlun 35970 Apr 18  2018 mysql-apt-config_0.8.10-1_all.deb
+inlun@unlun-server:~$ mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 23
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> exit
+Bye
+inlun@unlun-server:~$ 
