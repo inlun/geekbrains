@@ -7,4 +7,4 @@ pos2 = ord(ch2) - ord('a') + 1
 symbol_count = abs(pos1 - pos2) - 1
 print(f'Позиция буквы {ch1}: {pos1}')
 print(f'Позиция буквы {ch2}: {pos2}')
-print(f'Между буквами {symbol_count} букв')
+print(f'Между буквами {symbol_count}')
